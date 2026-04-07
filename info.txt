@@ -1,2 +1,7 @@
 What is Quantified self?
 - The quantified self is any individual engaged in the self-tracking of any kind of biological, physical, behavioral, or environmental information. The self-tracking is driven by a certain goal of the individual, with a desire to act upon the collected information {Hoogendoom, M., & Funk, B. (2018). Machine learning for the quantified self. On the art of learning from sensory data}
+
+
+Data Visualization Workflow:
+
+1. Define objective -> 2. Collect raw data -> 3. Process data -> 4. Apply business logic -> 5. Create figures -> 6. Style figures -> 7. Export -> 8. Evaluate -> 3. Process data (cycle continues)
