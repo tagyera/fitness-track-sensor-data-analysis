@@ -5,3 +5,7 @@ What is Quantified self?
 Data Visualization Workflow:
 
 1. Define objective -> 2. Collect raw data -> 3. Process data -> 4. Apply business logic -> 5. Create figures -> 6. Style figures -> 7. Export -> 8. Evaluate -> 3. Process data (cycle continues)
+
+
+What are outliers?
+An outlier is an extreme value in a data set that is much higher or lower than the majority of the values in the data set. Outliers can be caused by errors in data entry, or extreme variations in the data that are not typical. They can also indicate a discrepancy between the data and the underlying population it represents.
