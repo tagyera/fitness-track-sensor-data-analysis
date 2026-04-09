@@ -232,6 +232,22 @@ for col in outlier_column:
 # Check outliers grouped by label
 # --------------------------------------------------------------
 
+label = "bench"
+
+for col in outlier_column:
+    dataset = mark_outliers_iqr(df[df["label"] == label], col)
+    plot_binary_outliers(dataset, col, col + "_outlier", True)
+
+for col in outlier_column:
+    dataset = mark_outliers_chauvenet(df[df["label"] == label], col)
+    plot_binary_outliers(dataset, col, col + "_outlier", True)
+
+dataset, outliers, X_scores = mark_outliers_lof(
+    df[df["label"] == label], outlier_column
+)
+
+for col in outlier_column:
+    plot_binary_outliers(dataset, col, "outlier_lof", True)
 
 # --------------------------------------------------------------
 # Choose method and deal with outliers
@@ -239,9 +255,30 @@ for col in outlier_column:
 
 # Test on single column
 
+col = "gyr_z"
+
+dataset = mark_outliers_chauvenet(df, col)
+dataset[dataset["gyr_z_outlier"]]
+dataset.loc[dataset["gyr_z_outlier"], "gyr_z"] = np.nan
 
 # Create a loop
+outlier_removed_df = df.copy()
+
+for col in outlier_column:
+    for label in df["label"].unique():
+        dataset = mark_outliers_chauvenet(df[df["label"] == label], col)
+        dataset.loc[dataset[col + "_outlier"], col] = np.nan
+
+        outlier_removed_df.loc[(outlier_removed_df["label"] == label), col] = dataset[
+            col
+        ]
+
+        n_outlier = len(dataset) - len(dataset[col].dropna())
+        print(f"Remove {n_outlier} from {col} for {label}")
+
 
 # --------------------------------------------------------------
 # Export new dataframe
 # --------------------------------------------------------------
+
+outlier_removed_df.to_pickle("../../data/interim/02_outlier_removed_chauvenet.pkl")
