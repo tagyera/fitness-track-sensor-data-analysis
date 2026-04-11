@@ -9,3 +9,10 @@ Data Visualization Workflow:
 
 What are outliers?
 An outlier is an extreme value in a data set that is much higher or lower than the majority of the values in the data set. Outliers can be caused by errors in data entry, or extreme variations in the data that are not typical. They can also indicate a discrepancy between the data and the underlying population it represents.
+
+
+what is Feature engineering?
+Feature engineering is the process of transforming raw data into meaningful features that can be used for machine learning. This involves selecting the most useful features from the raw data and using them to build or create new features that represent the information in the dataset in a more effective way. These new, engineered features can make it easier for machine learning models to learn from the data and make more accurate predictions when done right.
+
+What is PCA (principal component analysis)?
+PCA is a technique used in machine learning to reduce the complexity of data by transforming the data into a new set of variables called principal components. This transformation is done in such a way that the new set of variables captures the most amount of information from the original data set, while reducing the number of variables necessary. This helps to reduce the complexity of the data and make it easier to analyze and make predictions from.
